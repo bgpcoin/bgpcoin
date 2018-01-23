@@ -55,3 +55,10 @@ minerd -t 1 -o http://127.0.0.1:32076 -u user -p x
 ```
 
 Enjoy!
+
+# Current Bounties
+
+1. 10240 BGP (40 block rewards) for a nicely designed site
+2. 20480 BGP (80 block rewards) for a Mac OS X wallet
+3. 20480 BGP (80 block rewards) for an Android wallet
+4. 102400 BGP (400 block rewards) for listing on an exchange, per exchange
