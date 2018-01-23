@@ -9,4 +9,33 @@ The rewards are 256 BGPCoins per block.
 The premined coins in the genesis block will be used to fund development in the
 form of code bounties.
 
+# Build Instructions
+
+1. Install the pre-requisites
+```sudo apt-get install build-essential libssl-dev libdb-dev libdb++-dev libboost-all-dev git libssl1.0.0-dbg libdb-dev libdb++-dev libboost-all-dev libminiupnpc-dev libminiupnpc-dev libevent-dev libcrypto++-dev libgmp3-dev```
+
+2. Build the daemon
+
+```make -f makefile.unix RELEASE=1```
+
+3. Install it
+
+```sudo cp bgpcoind /usr/sbin``` 
+
+4.  create a ~/.bgpcoin/bgpcoin.conf file with the following: 
+```
+rpcuser=user
+rpcpassword=x
+rpcallowip=*
+daemon=1
+server=1
+txindex=1
+gen=0```
+
+5. Run it
+```
+nohup /usr/sbin/bgpcoind &```
+
+Save the ~/.bgpcoin/wallet.dat file and you can load it with your QT wallet
+
 Enjoy!
