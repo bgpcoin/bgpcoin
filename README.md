@@ -43,4 +43,15 @@ nohup /usr/sbin/bgpcoind &
 
 Save the ```~/.bgpcoin/wallet.dat``` file and you can load it with your QT wallet
 
+6. Mine your coins (On localhost using all threads)
+
+```
+minerd -o http://127.0.0.1:32076 -u user -p x
+```
+
+7. Mine your coins (On localhost using one thread)
+```
+minerd -t 1 -o http://127.0.0.1:32076 -u user -p x
+```
+
 Enjoy!
