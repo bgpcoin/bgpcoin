@@ -30,7 +30,8 @@ rpcallowip=*
 daemon=1
 server=1
 txindex=1
-gen=0```
+gen=0
+```
 
 5. Run it
 ```
