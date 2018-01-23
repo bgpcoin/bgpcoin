@@ -19,10 +19,10 @@
 #include "Params.h"
 #include "Coin.h"
 #include "Commitment.h"
-#include "../bignum.h"
-#include "../serialize.h"
+#include "../../../src/bignum.h"
+#include "../../../src/serialize.h"
 #include "Accumulator.h"
-#include "../util.h"
+#include "../../../src/util.h"
 
 using namespace std;
 namespace libzerocoin {

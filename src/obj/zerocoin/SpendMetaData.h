@@ -13,8 +13,8 @@
 #ifndef SPENDMETADATA_H_
 #define SPENDMETADATA_H_
 
-#include "../uint256.h"
-#include "../serialize.h"
+#include "../../../src/uint256.h"
+#include "../../../src/serialize.h"
 
 using namespace std;
 namespace libzerocoin {
