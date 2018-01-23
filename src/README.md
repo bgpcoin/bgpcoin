@@ -19,7 +19,7 @@ sudo apt-get install build-essential libssl-dev libdb-dev libdb++-dev libboost-a
 
 2. Build the daemon
 
-```make -f makefile.unix RELEASE=1```
+```make RELEASE=1```
 
 3. Install it
 
