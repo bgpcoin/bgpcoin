@@ -144,10 +144,11 @@ OBJS= \
     obj/zerocoin/SpendMetaData.o \
     obj/zerocoin/ZeroTest.o
 
-install: 
-	cp bgpcoind /usr/sbin
 
 all: bgpcoind
+
+install: 
+	cp bgpcoind /usr/sbin
 
 LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
 DEFS += $(addprefix -I,$(CURDIR)/leveldb/include)
