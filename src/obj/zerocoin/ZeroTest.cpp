@@ -17,7 +17,7 @@ using namespace std;
 #include <fstream>
 #include <exception>
 #include "Zerocoin.h"
-#include "../util.h"
+#include "../../../src/util.h"
 
 using namespace libzerocoin;
 extern Params* ZCParams;
