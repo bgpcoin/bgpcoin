@@ -59,6 +59,7 @@ Enjoy!
 # Current Bounties
 
 1. 10240 BGP (40 block rewards) for a nicely designed site
-2. 20480 BGP (80 block rewards) for a Mac OS X wallet
-3. 20480 BGP (80 block rewards) for an Android wallet
-4. 102400 BGP (400 block rewards) for listing on an exchange, per exchange
+2. 20480 BGP (80 block rewards) for an ISP who agrees to take BGPCoin
+3. 20480 BGP (80 block rewards) for a Mac OS X wallet
+4. 20480 BGP (80 block rewards) for an Android wallet
+5. 102400 BGP (400 block rewards) for listing on an exchange, per exchange
