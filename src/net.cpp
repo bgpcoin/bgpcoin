@@ -1106,13 +1106,19 @@ void ThreadMapPort2(void* parg)
     struct UPNPDev * devlist = 0;
     char lanaddr[64];
 
+// upnpDiscover() takes seven arguments after version 1.9. 
+// https://github.com/transmission/miniupnpc/blob/e37cde82e8673a5e71bae43086828704fd5eeac1/miniupnpc.c#L283
 #ifndef UPNPDISCOVER_SUCCESS
     /* miniupnpc 1.5 */
     devlist = upnpDiscover(2000, multicastif, minissdpdpath, 0);
-#else
+#elif MINIUPNPC_API_VERSION < 14
     /* miniupnpc 1.6 */
     int error = 0;
     devlist = upnpDiscover(2000, multicastif, minissdpdpath, 0, 0, &error);
+#else
+    /* miniupnpc 1.9.20150730 */
+    int error = 0;
+    devlist = upnpDiscover(2000, multicastif, minissdpdpath, 0, 0, 2, &error);
 #endif
 
     struct UPNPUrls urls;
