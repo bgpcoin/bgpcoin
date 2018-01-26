@@ -78,6 +78,7 @@ brew link boost@1.57 --force
 
 2. Build the daemon
 
+```
 cd bgpcoin/src/leveldb
 make clean && make -j && make -j memenv_test
 cd ..
