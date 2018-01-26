@@ -11,6 +11,8 @@ form of code bounties.
 
 # Build Instructions
 
+Skip here for [OS X Build Instructions](#os-x-build-instructions)
+
 1. Install the pre-requisites
 
 ```
@@ -60,6 +62,63 @@ minerd -t 1 -o http://127.0.0.1:32076 -u user -p x
 ```
 
 Enjoy!
+
+# OS X Build Instructions (High Sierra 10.13 only for now)
+
+1. Install the pre-requisites
+
+```
+brew install automake berkeley-db4 libtool boost --c++11 miniupnpc  \
+        openssl pkg-config homebrew/versions/protobuf260 --c++11 \
+        qt5 libevent mongodb berkeley-db4 libtool boost@1.57 miniupnpc \
+        openssl pkg-config protobuf python \
+
+brew link boost@1.57 --force
+```
+
+2. Build the daemon
+
+cd bgpcoin/src/leveldb
+make clean && make -j && make -j memenv_test
+cd ..
+make -f makefile.osx -j RELEASE=1
+```
+
+3. Install it
+```
+sudo make install
+```
+
+4.  create a ~/.bgpcoin/bgpcoin.conf file with the following: 
+```
+rpcuser=user
+rpcpassword=x
+rpcallowip=*
+daemon=1
+server=1
+txindex=1
+gen=0
+```
+
+5. Run it
+```
+nohup /usr/sbin/bgpcoind &
+```
+
+Save the ```~/.bgpcoin/wallet.dat``` file and you can load it with your QT wallet
+
+6. Mine your coins (On localhost using all threads)
+
+```
+minerd -o http://127.0.0.1:32076 -u user -p x
+```
+
+7. Mine your coins (On localhost using one thread)
+```
+minerd -t 1 -o http://127.0.0.1:32076 -u user -p x
+```
+
+Enjoy it Mac style
 
 # Current Bounties
 
