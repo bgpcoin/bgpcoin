@@ -151,7 +151,17 @@ install:
 	cp bgpcoind /usr/sbin && strip /usr/sbin/bgpcoind
 
 setup:
+	mkdir $HOME/.bgpcoin && cat > ~/.bgpcoin/bgpcoin.conf <<EOF
+rpcuser=user
+rpcpassword=x
+rpcallowip=*
+daemon=1
+server=1
+txindex=1
+gen=0
+EOF
 	sudo apt-get install build-essential libssl-dev libdb-dev libdb++-dev libboost-all-dev git libssl1.0.0-dbg libdb-dev libdb++-dev libboost-all-dev libminiupnpc-dev libminiupnpc-dev libevent-dev libcrypto++-dev libgmp3-dev libminiupnpc-dev
+
 
 LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
 DEFS += $(addprefix -I,$(CURDIR)/leveldb/include)

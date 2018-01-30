@@ -13,16 +13,16 @@ form of code bounties.
 
 Skip here for [OS X Build Instructions](#os-x-build-instructions)
 
-1. Install the pre-requisites
+1. Install the pre-requisites and generate a config file
 
 ```
-sudo apt-get install build-essential libssl-dev libdb-dev libdb++-dev libboost-all-dev git libssl1.0.0-dbg libdb-dev libdb++-dev libboost-all-dev libminiupnpc-dev libminiupnpc-dev libevent-dev libcrypto++-dev libgmp3-dev libminiupnpc-dev
+cd src
+make setup
 ```
 
 2. Build the daemon
 
 ```
-cd src
 make RELEASE=1
 ```
 
@@ -32,25 +32,14 @@ make RELEASE=1
 sudo make install
 ``` 
 
-4.  create a ~/.bgpcoin/bgpcoin.conf file with the following: 
-```
-rpcuser=user
-rpcpassword=x
-rpcallowip=*
-daemon=1
-server=1
-txindex=1
-gen=0
-```
-
-5. Run it
+4. Run it
 ```
 nohup /usr/sbin/bgpcoind &
 ```
 
 Save the ```~/.bgpcoin/wallet.dat``` file and you can load it with your QT wallet
 
-6. Mine your coins using the official mining pool (recommended)
+7. Mine your coins using the official mining pool (recommended)
 
 ```
 minerd -o stratum+tcp://pool.bgpcoin.com:3008/ -u `bgpcoind getaccountaddress 0` -p x
@@ -58,7 +47,7 @@ minerd -o stratum+tcp://pool.bgpcoin.com:3008/ -u `bgpcoind getaccountaddress 0`
 
 -or-
 
-7. Mine your coins (On localhost using all threads)
+8. Mine your coins (On localhost using all threads)
 
 ```
 minerd -o http://127.0.0.1:32076 -u user -p x
@@ -66,7 +55,7 @@ minerd -o http://127.0.0.1:32076 -u user -p x
 
 -or-
 
-8. Mine your coins (On localhost using one thread)
+9. Mine your coins (On localhost using one thread)
 ```
 minerd -t 1 -o http://127.0.0.1:32076 -u user -p x
 ```
